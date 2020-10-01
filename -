@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+float rand_float(float max_value)
+{
+    return (float)rand() / ((float)RAND_MAX / max_value);
+}
+
+float rand_float_range(float lower, float upper)
+{
+    return rand_float(upper - lower) + lower;
+}
+
+int main()
+{
+    srand(time(0));
+    printf("rand_float: %f", rand_float_range(1.0, 2.0));
+    return 0;
+}
